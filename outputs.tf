@@ -1029,21 +1029,3 @@ output "name" {
   value       = var.name
 }
 
-# endpoint DNS hosted zone id
-
-output "vpc_endpoint_athena_dns_entry" {
-  description = "The DNS hosted zone ID for the VPC Endpoint for Athena"
-  value       = flatten(aws_vpc_endpoint.ahtena.*.dns_entry)
-}
-output "vpc_endpoint_ecr_dns_entry" {
-  description = "The DNS hosted zone ID for the VPC Endpoint for ECR"
-  value       = flatten(aws_vpc_endpoint.ecr.*.dns_entry)
-}
-output "vpc_endpoint_kms_dns_entry" {
-  description = "The DNS hosted zone ID for the VPC Endpoint for kms"
-  value       = flatten(aws_vpc_endpoint.kms.*.dns_entry)
-}
-output "vpc_endpoint_logs_dns_entry" {
-  description = "The DNS hosted zone ID for the VPC Endpoint for logs"
-  value       = flatten(aws_vpc_endpoint.logs.*.dns_entry)
-}
